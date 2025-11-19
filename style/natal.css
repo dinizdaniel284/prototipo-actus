@@ -9,7 +9,8 @@ body {
 }
 
 /* LATERAIS VERMELHAS */
-body:before, body:after {
+body:before,
+body:after {
     content: "";
     position: fixed;
     top: 0;
@@ -20,7 +21,7 @@ body:before, body:after {
 }
 
 body:before { left: 0; }
-body:after { right: 0; }
+body:after  { right: 0; }
 
 /* CABEÇALHO */
 header {
@@ -33,7 +34,7 @@ header {
     font-size: 40px;
     margin: 0;
     font-weight: bold;
-    color: #007bff; /* azul forte chamativo */
+    color: #007bff;
     text-shadow: 0 0 10px #00aaff;
 }
 
@@ -131,7 +132,8 @@ nav a {
 }
 
 /* NEVE LATERAL */
-#snow-left, #snow-right {
+#snow-left,
+#snow-right {
     position: fixed;
     top: 0;
     width: 130px;
@@ -152,5 +154,79 @@ nav a {
 
 @keyframes fall {
     from { transform: translateY(-10px); }
-    to { transform: translateY(100vh); }
+    to   { transform: translateY(100vh); }
+}
+
+/* ================================
+   📱📱 RESPONSIVIDADE MOBILE
+==================================*/
+@media (max-width: 768px) {
+
+    /* LATERAIS MENORES NO CELULAR */
+    body:before,
+    body:after {
+        width: 60px;
+    }
+
+    /* LOGO MENOR */
+    .logo {
+        font-size: 26px;
+        text-shadow: 0 0 6px #00aaff;
+    }
+
+    /* PAPAI NOEL MENOR E MAIS ACIMA */
+    .santa {
+        top: 40px;
+        width: 120px;
+        animation: santaWalk 10s linear infinite;
+    }
+
+    /* CARROSSEL MAIS LENTO E MENOR */
+    .marquee span {
+        font-size: 18px;
+        margin-right: 40px;
+    }
+
+    /* PARCEIROS */
+    .parceiros-marquee .item {
+        font-size: 18px;
+        margin: 0 30px;
+        padding: 8px 15px;
+    }
+
+    /* CARDS */
+    .card {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    /* NEVE LATERAL SOMENTE ONDE EXISTE FAIXA */
+    #snow-left,
+    #snow-right {
+        width: 60px;
+    }
+}
+
+/* ================================
+   💻💻 TELAS GRANDES (PC)
+==================================*/
+@media (min-width: 1200px) {
+
+    .logo {
+        font-size: 48px;
+    }
+
+    .santa {
+        width: 230px;
+        animation-duration: 14s;
+    }
+
+    .card {
+        max-width: 500px;
+    }
+
+    .parceiros-marquee .item {
+        font-size: 24px;
+        margin: 0 60px;
+    }
 }
