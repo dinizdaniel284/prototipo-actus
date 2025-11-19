@@ -4,246 +4,155 @@
 body {
     margin: 0;
     padding: 0;
-    background: white;
-    font-family: Arial, sans-serif;
-    color: black;
-    overflow-x: hidden;
 }
 
 /* LATERAIS VERMELHAS */
-body:before, body:after {
+body:before,
+body:after {
     content: "";
     position: fixed;
     top: 0;
-    width: 130px;
+    width: 130px; /* padrão para desktop */
     height: 100%;
-    background: #b00000;
+    background: red;
     z-index: -1;
 }
 
 body:before { left: 0; }
-body:after { right: 0; }
+body:after  { right: 0; }
 
 /* CABEÇALHO */
 header {
-    padding: 15px;
     text-align: center;
-    background: rgba(0,0,0,0.05);
-}
-
-.logo {
-    font-size: 40px;
-    margin: 0;
-    font-weight: bold;
-    color: #007bff;
+    padding: 20px;
+    color: #fff;
     text-shadow: 0 0 10px #00aaff;
 }
 
-/* MENU */
+/* MENUS */
 nav a {
     margin: 0 10px;
     color: #444;
-    font-weight: bold;
     text-decoration: none;
-}
-
-/* BANNER */
-.banner {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.shine {
-    color: red;
-    font-size: 30px;
     text-shadow: 0 0 10px gold, 0 0 20px yellow;
 }
 
-/* ================================
-   CARROSSEL DE TEXTO
-================================ */
+/* CARROSSEL SUAVE */
 .carousel {
     overflow: hidden;
     width: 100%;
-    margin: 30px 0;
-}
-
-.marquee {
-    display: flex;
-    animation: slide 15s linear infinite;
 }
 
 .marquee span {
-    margin-right: 60px;
-    font-size: 22px;
+    display: inline-block;
     white-space: nowrap;
+    animation: marquee 20s linear infinite;
 }
 
-@keyframes slide {
+@keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-/* ================================
-   TURISMO / CARDS
-================================ */
+/* TURISMO / CARDS */
 .turismo {
     padding: 30px;
     text-align: center;
 }
 
 .card {
-    background: rgba(0,0,0,0.05);
-    padding: 20px;
-    margin: 10px auto;
     max-width: 400px;
-    border-radius: 15px;
+    margin: 10px auto;
+    padding: 20px;
     border-left: 5px solid red;
 }
 
-/* ================================
-   PARCEIROS
-================================ */
+/* PARCEIROS */
 .parceiros {
     text-align: center;
     padding: 40px 0;
 }
 
-.parceiros-marquee {
-    display: flex;
-    animation: slide 20s linear infinite;
-}
-
 .parceiros-marquee .item {
-    margin: 0 50px;
-    font-size: 22px;
-    padding: 10px 20px;
-    background: rgba(255,0,0,0.1);
-    border-radius: 12px;
-    font-weight: bold;
+    font-size: 24px;
+    margin: 0 60px;
 }
 
-/* ================================
-   PAPAI NOEL
-================================ */
+/* PAPAI NOEL */
 .santa {
     position: fixed;
     top: 80px;
-    left: -250px;
-    width: 200px;
-    z-index: 999;
-    animation: santaWalk 12s linear infinite;
+    width: 230px;
+    animation: santaWalk 10s linear infinite;
 }
 
 @keyframes santaWalk {
-    0% { left: -250px; }
+    0% { left: -100px; }
     100% { left: 100vw; }
 }
 
-/* ================================
-   NEVE LATERAL
-================================ */
+/* NEVE LATERAL */
 #snow-left, #snow-right {
     position: fixed;
     top: 0;
     width: 130px;
     height: 100%;
     pointer-events: none;
-    overflow: hidden;
-}
-
-#snow-left { left: 0; }
-#snow-right { right: 0; }
-
-.snowflake {
-    position: absolute;
-    color: white;
-    font-size: 12px;
-    animation: fall 4s linear infinite;
+    z-index: 0;
 }
 
 @keyframes fall {
-    from { transform: translateY(-10px); }
-    to { transform: translateY(100vh); }
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(100vh); }
 }
 
 /* ================================
-   RESPONSIVIDADE (MOBILE)
+   RESPONSIVIDADE MOBILE
 ================================ */
-
 @media (max-width: 900px) {
+    body:before, body:after { width: 70px; }
+    #snow-left, #snow-right { width: 70px; }
+}
 
-    /* laterais mais finas */
-    body:before, body:after {
-        width: 70px;
-    }
+@media (max-width: 768px) {
+    body:before, body:after { width: 60px; }
+    #snow-left, #snow-right { width: 60px; }
 
-    #snow-left, #snow-right {
-        width: 70px;
-    }
+    .logo { font-size: 28px; text-shadow: 0 0 6px #00aaff; }
+    .santa { top: 40px; width: 120px; animation-duration: 10s; }
+
+    nav a { font-size: 14px; margin: 6px; }
+    .banner h2 { font-size: 24px; }
+    .marquee span { font-size: 18px; margin-right: 40px; }
+    .parceiros-marquee .item { font-size: 16px; padding: 8px 15px; margin: 0 30px; }
+    .card { max-width: 90%; padding: 15px; }
 }
 
 @media (max-width: 600px) {
+    body:before, body:after { width: 40px; }
+    #snow-left, #snow-right { width: 40px; }
 
-    /* laterais mínimas */
-    body:before, body:after {
-        width: 40px;
-    }
-
-    #snow-left, #snow-right {
-        width: 40px;
-    }
-
-    .logo {
-        font-size: 28px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 6px;
-        font-size: 14px;
-    }
-
-    .banner h2 {
-        font-size: 24px;
-    }
-
-    .marquee span {
-        font-size: 18px;
-        margin-right: 40px;
-    }
-
-    .parceiros-marquee .item {
-        font-size: 16px;
-        padding: 6px 14px;
-        margin: 0 30px;
-    }
-
-    .santa {
-        width: 140px;
-        top: 120px;
-    }
+    .logo { font-size: 26px; }
+    .santa { width: 120px; top: 40px; }
 }
 
 @media (max-width: 400px) {
+    body:before, body:after { width: 30px; }
+    #snow-left, #snow-right { width: 30px; }
 
-    body:before, body:after {
-        width: 30px;
-    }
+    .logo { font-size: 24px; }
+    .santa { width: 120px; animation-duration: 14s; }
+    .card { max-width: 90%; }
+    .parceiros-marquee .item { font-size: 18px; margin: 0 20px; }
+    .marquee span { font-size: 16px; }
+}
 
-    #snow-left, #snow-right {
-        width: 30px;
-    }
-
-    .logo {
-        font-size: 24px;
-    }
-
-    .marquee span {
-        font-size: 16px;
-    }
-
-    .santa {
-        width: 120px;
-    }
-        }
+/* ================================
+   TELAS GRANDES (PC)
+================================ */
+@media (min-width: 1200px) {
+    .logo { font-size: 48px; }
+    .card { max-width: 500px; }
+    .santa { width: 230px; animation-duration: 14s; }
+    .parceiros-marquee .item { font-size: 24px; margin: 0 60px; }
+}
