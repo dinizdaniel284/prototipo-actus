@@ -1,4 +1,6 @@
-/* FUNDO CENTRAL */
+/* ================================
+   ESTILO PRINCIPAL
+================================ */
 body {
     margin: 0;
     padding: 0;
@@ -9,8 +11,7 @@ body {
 }
 
 /* LATERAIS VERMELHAS */
-body:before,
-body:after {
+body:before, body:after {
     content: "";
     position: fixed;
     top: 0;
@@ -21,7 +22,7 @@ body:after {
 }
 
 body:before { left: 0; }
-body:after  { right: 0; }
+body:after { right: 0; }
 
 /* CABEÇALHO */
 header {
@@ -38,7 +39,7 @@ header {
     text-shadow: 0 0 10px #00aaff;
 }
 
-/* MENUS */
+/* MENU */
 nav a {
     margin: 0 10px;
     color: #444;
@@ -58,7 +59,9 @@ nav a {
     text-shadow: 0 0 10px gold, 0 0 20px yellow;
 }
 
-/* CARROSSEL SUAVE */
+/* ================================
+   CARROSSEL DE TEXTO
+================================ */
 .carousel {
     overflow: hidden;
     width: 100%;
@@ -81,7 +84,9 @@ nav a {
     100% { transform: translateX(-50%); }
 }
 
-/* TURISMO */
+/* ================================
+   TURISMO / CARDS
+================================ */
 .turismo {
     padding: 30px;
     text-align: center;
@@ -96,7 +101,9 @@ nav a {
     border-left: 5px solid red;
 }
 
-/* PARCEIROS */
+/* ================================
+   PARCEIROS
+================================ */
 .parceiros {
     text-align: center;
     padding: 40px 0;
@@ -116,7 +123,9 @@ nav a {
     font-weight: bold;
 }
 
-/* PAPAI NOEL */
+/* ================================
+   PAPAI NOEL
+================================ */
 .santa {
     position: fixed;
     top: 80px;
@@ -131,9 +140,10 @@ nav a {
     100% { left: 100vw; }
 }
 
-/* NEVE LATERAL */
-#snow-left,
-#snow-right {
+/* ================================
+   NEVE LATERAL
+================================ */
+#snow-left, #snow-right {
     position: fixed;
     top: 0;
     width: 130px;
@@ -154,79 +164,86 @@ nav a {
 
 @keyframes fall {
     from { transform: translateY(-10px); }
-    to   { transform: translateY(100vh); }
+    to { transform: translateY(100vh); }
 }
 
 /* ================================
-   📱📱 RESPONSIVIDADE MOBILE
-==================================*/
-@media (max-width: 768px) {
+   RESPONSIVIDADE (MOBILE)
+================================ */
 
-    /* LATERAIS MENORES NO CELULAR */
-    body:before,
-    body:after {
-        width: 60px;
+@media (max-width: 900px) {
+
+    /* laterais mais finas */
+    body:before, body:after {
+        width: 70px;
     }
 
-    /* LOGO MENOR */
+    #snow-left, #snow-right {
+        width: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* laterais mínimas */
+    body:before, body:after {
+        width: 40px;
+    }
+
+    #snow-left, #snow-right {
+        width: 40px;
+    }
+
     .logo {
-        font-size: 26px;
-        text-shadow: 0 0 6px #00aaff;
+        font-size: 28px;
     }
 
-    /* PAPAI NOEL MENOR E MAIS ACIMA */
-    .santa {
-        top: 40px;
-        width: 120px;
-        animation: santaWalk 10s linear infinite;
+    nav a {
+        display: inline-block;
+        margin: 6px;
+        font-size: 14px;
     }
 
-    /* CARROSSEL MAIS LENTO E MENOR */
+    .banner h2 {
+        font-size: 24px;
+    }
+
     .marquee span {
         font-size: 18px;
         margin-right: 40px;
     }
 
-    /* PARCEIROS */
     .parceiros-marquee .item {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 6px 14px;
         margin: 0 30px;
-        padding: 8px 15px;
-    }
-
-    /* CARDS */
-    .card {
-        max-width: 90%;
-        padding: 15px;
-    }
-
-    /* NEVE LATERAL SOMENTE ONDE EXISTE FAIXA */
-    #snow-left,
-    #snow-right {
-        width: 60px;
-    }
-}
-
-/* ================================
-   💻💻 TELAS GRANDES (PC)
-==================================*/
-@media (min-width: 1200px) {
-
-    .logo {
-        font-size: 48px;
     }
 
     .santa {
-        width: 230px;
-        animation-duration: 14s;
-    }
-
-    .card {
-        max-width: 500px;
-    }
-
-    .parceiros-marquee .item {
-        font-size: 24px;
-        margin: 0 60px;
+        width: 140px;
+        top: 120px;
     }
 }
+
+@media (max-width: 400px) {
+
+    body:before, body:after {
+        width: 30px;
+    }
+
+    #snow-left, #snow-right {
+        width: 30px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .marquee span {
+        font-size: 16px;
+    }
+
+    .santa {
+        width: 120px;
+    }
+        }
