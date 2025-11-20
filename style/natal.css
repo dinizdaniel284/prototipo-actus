@@ -17,7 +17,7 @@ body:before, body:after {
     content: "";
     position: fixed;
     top: 0;
-    width: 130px; /* padrão desktop */
+    width: 130px;
     height: 100%;
     background: #b00000;
     z-index: -1;
@@ -44,11 +44,18 @@ header {
 /* ================================
    MENUS
 ================================ */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
 nav a {
-    margin: 0 10px;
     color: #444;
     font-weight: bold;
     text-decoration: none;
+    text-align: center;
 }
 
 /* ================================
@@ -58,9 +65,11 @@ nav a {
     text-align: center;
     padding: 40px 20px;
 }
+.banner h2 {
+    font-size: 30px;
+}
 .shine {
     color: red;
-    font-size: 30px;
     text-shadow: 0 0 10px gold, 0 0 20px yellow;
 }
 
@@ -74,10 +83,11 @@ nav a {
 }
 .marquee {
     display: flex;
+    justify-content: center;
     animation: slide 15s linear infinite;
 }
 .marquee span {
-    margin-right: 60px;
+    margin: 0 40px;
     font-size: 22px;
     white-space: nowrap;
 }
@@ -111,12 +121,14 @@ nav a {
 }
 .parceiros-marquee {
     display: flex;
+    justify-content: center;
     animation: slide 20s linear infinite;
+    flex-wrap: wrap;
 }
 .parceiros-marquee .item {
-    margin: 0 50px;
+    margin: 10px 20px;
     font-size: 22px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     background: rgba(255,0,0,0.1);
     border-radius: 12px;
     font-weight: bold;
@@ -174,14 +186,15 @@ nav a {
     body:before, body:after { width: 60px; }
     #snow-left, #snow-right { width: 60px; }
 
-    .logo { font-size: 28px; text-shadow: 0 0 6px #00aaff; }
+    .logo { font-size: 28px; }
     .santa { width: 120px; top: 40px; animation-duration: 10s; }
+
     nav a { font-size: 14px; margin: 6px; }
     .banner { padding: 20px 10px; }
     .banner h2 { font-size: 24px; }
-    .marquee span { font-size: 16px; margin-right: 20px; }
-    .parceiros-marquee .item { font-size: 16px; margin: 0 15px; padding: 8px 12px; }
-    .card { max-width: 90%; padding: 15px; }
+    .marquee span { font-size: 18px; margin: 0 15px; }
+    .parceiros-marquee .item { font-size: 16px; margin: 5px 10px; padding: 6px 10px; }
+    .card { max-width: 95%; padding: 15px; }
 }
 
 @media (max-width: 400px) {
@@ -190,9 +203,8 @@ nav a {
 
     .logo { font-size: 24px; }
     .santa { width: 100px; top: 30px; animation-duration: 8s; }
-    .card { max-width: 90%; }
-    .parceiros-marquee .item { font-size: 14px; margin: 0 10px; padding: 6px 10px; }
-    .marquee span { font-size: 14px; margin-right: 15px; }
+    .marquee span { font-size: 14px; margin: 0 10px; }
+    .parceiros-marquee .item { font-size: 14px; margin: 0 5px; padding: 5px 8px; }
 }
 
 /* ================================
