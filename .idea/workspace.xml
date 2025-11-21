@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25e13aa2-623c-4a61-92ff-a54233a39812" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/img/Santa_Rita_do_Passa_Quatro_.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/Santuario_Santa-Rita_de_Cassia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/a_cidade_nova.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/cachoeira_sao_valentim.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/cachoeira_sao_valentim_queda.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/conticlub.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/desafios_turismo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/festival.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/images.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/jardim_do_lago.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/jequitibá.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/placa-de-localizacao-cidade-de-santa-rita.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/revitalizacao-de-morro-itatiaia-e-entregue-em-santa-rita-do-passa-quatro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/santarita.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/natal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/natal.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,17 +42,20 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/diniz/PycharmProject/PrototipoActus/img"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/diniz/PycharmProject/PrototipoActus/img&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\diniz\PycharmProject\PrototipoActus\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\diniz\PycharmProject\PrototipoActus\img" />
     </key>
   </component>
