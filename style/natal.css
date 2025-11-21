@@ -1,128 +1,60 @@
-/* ======== RESET ======== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:#fff;overflow-x:hidden;scroll-behavior:smooth;position:relative;padding-left:40px;padding-right:40px;}
+
+/* FAIXAS LATERAIS */
+.faixa-left, .faixa-right{
+    position:fixed;top:0;width:25px;height:100vh;
+    background:#bf0000 url('../img/fundo-natal.png') repeat-y;
+    z-index:10;
 }
+.faixa-left{left:0;}
+.faixa-right{right:0;}
 
-body {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    overflow-x: hidden;
-}
+/* HEADER */
+header{background:#f4f4f4;text-align:center;padding:15px;position:sticky;top:0;z-index:100;}
+header h1{font-size:2rem;color:#0099ff;}
+header nav{margin-top:10px;}
+header nav a{text-decoration:none;margin:0 10px;color:#0099ff;font-weight:600;transition: transform 0.3s, box-shadow 0.3s, color 0.3s;}
+header nav a:hover, header nav a:active{transform: translateY(-6px);box-shadow:0 6px 15px rgba(0,0,0,0.3);color:#0055cc;}
 
-/* ======== BARRAS LATERAIS ======== */
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    width: 60px;         /* 🔥 REDUZI para não ficar gigante no celular */
-    height: 100vh;
-    background: url('imagens/fundo-natal.png') repeat-y;
-    z-index: -1;
-}
+/* BANNER */
+.banner{text-align:center;padding:50px 15px;}
+.titulo-natal{font-size:2.4rem;color:red;text-shadow:0 0 10px yellow;margin-bottom:15px;}
+.subtitulo{font-size:1.2rem;margin-bottom:25px;}
+.btn-actus{display:inline-block;background:#0099ff;color:#fff;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;transition: all 0.3s;box-shadow:0 3px 10px rgba(0,0,0,0.2);}
+.btn-actus:hover{transform: translateY(-6px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.4);background:#007acc;}
 
-body::before {
-    left: 0;
-}
-body::after {
-    right: 0;
-}
+/* BOX PONTOS */
+.box-ponto{background:#f7f7f7;padding:18px;margin-bottom:15px;border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,0.15);transition: transform 0.3s, box-shadow 0.3s;}
+.box-ponto:hover,.box-ponto:active{transform: translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+.box-ponto h3{color:#bf0000;font-size:1.3rem;margin-bottom:8px;}
 
-/* ======== AJUSTE MOBILE das barras ======== */
-@media (max-width: 768px) {
-    body::before,
-    body::after {
-        width: 25px;    /* 🔥 FICOU PERFEITO NO CELULAR */
-        opacity: 0.9;
-    }
-}
+/* GALERIA */
+.galeria-carousel{display:flex;gap:15px;overflow-x:auto;scroll-behavior:smooth;}
+.galeria-carousel img{width:220px;height:150px;border-radius:10px;flex-shrink:0;transition: transform 0.3s;}
+.galeria-carousel img:hover{transform: scale(1.1);}
 
-/* ======== HEADER ======== */
-header {
-    background: #f4f4f4;
-    text-align: center;
-    padding: 15px;
-}
+/* CARROSSEL TEXTO */
+.marquee{display:flex;gap:50px;overflow:hidden;animation: marquee 12s linear infinite;}
+.marquee span{font-size:1.2rem;}
+@keyframes marquee{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
 
-header h1 {
-    font-size: 2rem;
-    color: #0099ff;
-}
+/* PARCEIROS */
+.parceiros-marquee{display:flex;gap:30px;overflow:hidden;animation: parceirosMove 15s linear infinite;}
+.parceiros-marquee .item{background:#0099ff;padding:10px 15px;border-radius:10px;color:#fff;font-weight:bold;box-shadow:0 3px 12px rgba(0,0,0,0.2);transition: transform 0.3s, box-shadow 0.3s;}
+.parceiros-marquee .item:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+@keyframes parceirosMove{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
 
-/* ======== SEÇÕES ======== */
-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 25px 15px;
-}
+/* PAPAI NOEL SOBREVOANDO */
+.santa{position:fixed;width:120px;z-index:200;transition: all 0.3s;}
+@media(max-width:768px){.santa{width:70px;}}
 
-.titulo-natal {
-    text-align: center;
-    font-size: 2rem;
-    color: red;
-    text-shadow: 0 0 10px yellow;
-    margin-bottom: 10px;
-}
+/* COOKIE */
+.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#0099ff;color:#fff;text-align:center;padding:10px;z-index:300;display:flex;justify-content:center;align-items:center;}
+.cookie-consent button{margin-left:10px;padding:5px 12px;border:none;background:#fff;color:#0099ff;border-radius:5px;cursor:pointer;}
 
-.subtitulo {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-}
+/* MOBILE */
+@media(max-width:768px){header h1{font-size:1.5rem;}.titulo-natal{font-size:1.8rem;}.subtitulo{font-size:1rem;padding:0 10px;}.box-ponto{padding:15px;}nav{font-size:0.9rem;}}
 
-/* ======== BOXES DE CADA PONTO ======== */
-.box-ponto {
-    background: #f7f7f7;
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.box-ponto h3 {
-    color: #bf0000;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-}
-
-/* ======== CARROSSEL ======== */
-.carousel {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-/* ======== MOBILE: TEXTO AJUSTADO ======== */
-@media (max-width: 768px) {
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .titulo-natal {
-        font-size: 1.6rem;
-    }
-
-    .subtitulo {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    .box-ponto {
-        padding: 15px;
-    }
-
-    nav {
-        font-size: 0.9rem;
-    }
-}
+/* NEVE */
+#snowCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:150;}

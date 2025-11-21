@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACTUS - Natal</title>
-    <link rel="stylesheet" href="style/natal.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACTUS - Natal</title>
+<link rel="stylesheet" href="style/natal.css">
 </head>
 <body>
 
-    <!-- PAPAI NOEL -->
-    <img src="img/natal.png" class="santa" alt="Papai Noel">
+<!-- PAPAI NOEL -->
+<img src="img/natal.png" class="santa" alt="Papai Noel" id="santa">
 
-    <!-- CABEÇALHO -->
-    <header>
-        <h1 class="logo">ACTUS</h1>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Pontos Turísticos</a>
-            <a href="#">Roteiros</a>
-            <a href="#">Promoções</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
+<!-- NEVE -->
+<canvas id="snowCanvas"></canvas>
 
-    <!-- BANNER -->
-    <section class="banner">
-        <h2 class="titulo-natal">Natal Mágico em Santa Rita do Passa Quatro</h2>
-        <p class="subtitulo">Descubra eventos, promoções e os melhores pontos turísticos!</p>
-    </section>
+<!-- FAIXAS LATERAIS VERMELHAS -->
+<div class="faixa-left"></div>
+<div class="faixa-right"></div>
 
-    <!-- TEXTO EM MOVIMENTO (CARROSSEL) -->
-    <section class="carousel">
-        <div class="marquee">
-            <span>🎄 Promoções de Natal</span>
-            <span>🚌 Roteiros Especiais</span>
-            <span>📸 Pontos Turísticos</span>
-        </div>
-    </section>
+<!-- CABEÇALHO -->
+<header>
+    <h1 class="logo">ACTUS</h1>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Pontos Turísticos</a>
+        <a href="#">Roteiros</a>
+        <a href="#">Promoções</a>
+        <a href="#">Contato</a>
+    </nav>
+</header>
 
-    <!-- TURISMO -->
-    <section class="turismo">
-        <h2 class="titulo-natal">Pontos Turísticos de Santa Rita</h2>
+<!-- BANNER -->
+<section class="banner">
+    <h2 class="titulo-natal">Natal Mágico em Santa Rita do Passa Quatro</h2>
+    <p class="subtitulo">Descubra eventos, promoções e os melhores pontos turísticos!</p>
+    <a href="#" class="btn-actus">Saiba Mais</a>
+</section>
 
-        <div class="box-ponto">
-            <h3>🌳 <a href="https://www.infraestruturameioambiente.sp.gov.br/fundacaoflorestal/2020/03/parque-estadual-vassununga/" target="_blank">Parque Estadual Vassununga</a></h3>
-            <p>Lar da gigantesca árvore jequitibá-rosa, símbolo nacional.</p>
-        </div>
+<!-- CARROSSEL TEXTO -->
+<section class="carousel-text">
+    <div class="marquee">
+        <span>🎄 Promoções de Natal</span>
+        <span>🚌 Roteiros Especiais</span>
+        <span>📸 Pontos Turísticos</span>
+    </div>
+</section>
 
-        <div class="box-ponto">
-            <h3>🎡 Praça Poeta Mário Mattoso</h3>
-            <p>Um dos principais cartões-postais da cidade.</p>
-        </div>
+<!-- TURISMO -->
+<section class="turismo">
+    <h2 class="titulo-natal">Pontos Turísticos de Santa Rita</h2>
+    <div class="box-ponto">
+        <h3>🌳 <a href="https://www.infraestruturameioambiente.sp.gov.br/fundacaoflorestal/2020/03/parque-estadual-vassununga/" target="_blank">Parque Estadual Vassununga</a></h3>
+        <p>Lar da gigantesca árvore jequitibá-rosa, símbolo nacional.</p>
+    </div>
+    <div class="box-ponto">
+        <h3>🎡 <a href="https://www.santaritadopassaquatro.sp.gov.br/praca-poeta-mario-mattoso" target="_blank">Praça Poeta Mário Mattoso</a></h3>
+        <p>Um dos principais cartões-postais da cidade.</p>
+    </div>
+    <div class="box-ponto">
+        <h3>🏛️ <a href="https://www.santaritadopassaquatro.sp.gov.br/museu-zequinha-de-abreu/" target="_blank">Museu Zequinha de Abreu</a></h3>
+        <p>História, música e cultura santarritense.</p>
+    </div>
+</section>
 
-        <div class="box-ponto">
-            <h3>🏛️ <a href="https://www.santaritadopassaquatro.sp.gov.br/museu-zequinha-de-abreu/" target="_blank">Museu Zequinha de Abreu</a></h3>
-            <p>História, música e cultura santarritense.</p>
-        </div>
-    </section>
+<!-- GALERIA -->
+<section class="galeria">
+    <h2 class="titulo-natal">Explore a Cidade</h2>
+    <div class="galeria-carousel">
+        <img src="img/a_cidade_nova.jpg" alt="">
+        <img src="img/cachoeira_sao_valentim.jpg" alt="">
+        <img src="img/cachoeira_sao_valentim_queda.jpg" alt="">
+        <img src="img/conticlub.jpg" alt="">
+        <img src="img/desafios_turismo.jpg" alt="">
+        <img src="img/festival.jpg" alt="">
+        <img src="img/images.jpg" alt="">
+        <img src="img/jardim_do_lago.jpg" alt="">
+        <img src="img/jequitibá.jpg" alt="">
+    </div>
+</section>
 
-    <!-- GALERIA PROFISSIONAL -->
-    <section class="galeria">
-        <h2 class="titulo-natal">Explore a Cidade</h2>
+<!-- PARCEIROS -->
+<section class="parceiros">
+    <h2 class="titulo-natal">Parceiros Oficiais</h2>
+    <div class="parceiros-marquee">
+        <div class="item">Missiato</div>
+        <div class="item">ZPP</div>
+        <div class="item">Reimalhas</div>
+        <div class="item">São Matheus</div>
+        <div class="item">Pousada da Colina</div>
+        <div class="item">Mirante do Morro</div>
+    </div>
+</section>
 
-        <div class="carousel">
-            <div class="galeria-carousel">
-                <img src="img/a_cidade_nova.jpg" alt="">
-                <img src="img/cachoeira_sao_valentim.jpg" alt="">
-                <img src="img/cachoeira_sao_valentim_queda.jpg" alt="">
-                <img src="img/conticlub.jpg" alt="">
-                <img src="img/desafios_turismo.jpg" alt="">
-                <img src="img/festival.jpg" alt="">
-                <img src="img/images.jpg" alt="">
-                <img src="img/jardim_do_lago.jpg" alt="">
-                <img src="img/jequitibá.jpg" alt="">
-                <img src="img/placa-de-localizacao-cidade-de-santa-rita.jpg" alt="">
-                <img src="img/revitalizacao-de-morro-itatiaia-e-entregue-em-santa-rita-do-passa-quatro.jpg" alt="">
-                <img src="img/Santa_Rita_Do_Passa_Quatro_.jpg" alt="">
-                <img src="img/santarita.jpg" alt="">
-                <img src="img/Santuario_Santa-Rita_de_Cassia.jpg" alt="">
-            </div>
-        </div>
-    </section>
+<!-- COOKIES -->
+<div class="cookie-consent" id="cookieConsent">
+    <p>Este site utiliza cookies para melhorar sua experiência. <button id="acceptCookies">Aceitar</button></p>
+</div>
 
-    <!-- PARCEIROS -->
-    <section class="parceiros">
-        <h2 class="titulo-natal">Parceiros Oficiais</h2>
-
-        <div class="parceiros-marquee">
-            <div class="item">Missiato</div>
-            <div class="item">ZPP</div>
-            <div class="item">Reimalhas</div>
-            <div class="item">São Matheus</div>
-            <div class="item">Pousada da Colina</div>
-            <div class="item">Mirante do Morro</div>
-        </div>
-    </section>
-
-    <script src="js/script.js"></script>
+<!-- SCRIPTS -->
+<script src="js/script.js"></script>
 </body>
 </html>
