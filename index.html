@@ -1,103 +1,75 @@
+<!-- index.html completo -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACTUS - Natal</title>
-<link rel="stylesheet" href="style/natal.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Actus</title>
+    <link rel="stylesheet" href="style/natal.css" />
 </head>
 <body>
 
-<!-- PAPAI NOEL -->
-<img src="img/natal.png" class="santa" alt="Papai Noel" id="santa">
+    <!-- Bordas natalinas -->
+    <div class="borda-natal"></div>
 
-<!-- NEVE -->
-<canvas id="snowCanvas"></canvas>
+    <!-- Neve -->
+    <div id="snow"></div>
 
-<!-- FAIXAS LATERAIS VERMELHAS -->
-<div class="faixa-left"></div>
-<div class="faixa-right"></div>
+    <!-- LOGO (Azul) -->
+    <header>
+        <h1 class="logo">✨ Actus ✨</h1>
+        <p class="sub">Venha viver a magia do Natal em nossa cidade!</p>
+    </header>
 
-<!-- CABEÇALHO -->
-<header>
-    <h1 class="logo">ACTUS</h1>
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Pontos Turísticos</a>
-        <a href="#">Roteiros</a>
-        <a href="#">Promoções</a>
-        <a href="#">Contato</a>
-    </nav>
-</header>
+    <!-- Papai Noel voando -->
+    <img src="img/natal.png" class="papai-noel" alt="Papai Noel" />
 
-<!-- BANNER -->
-<section class="banner">
-    <h2 class="titulo-natal">Natal Mágico em Santa Rita do Passa Quatro</h2>
-    <p class="subtitulo">Descubra eventos, promoções e os melhores pontos turísticos!</p>
-    <a href="#" class="btn-actus">Saiba Mais</a>
-</section>
+    <!-- Carrossel de Pontos Turísticos -->
+    <section class="carrossel-container">
+        <div class="carrossel">
+            <img src="img/a_cidade_nova.jpg">
+            <img src="img/cachoeira_sao_valentim.jpg">
+            <img src="img/cachoeira_sao_valentim_queda.jpg">
+            <img src="img/conticlub.jpg">
+            <img src="img/desafios_turismo.jpg">
+            <img src="img/festival.jpg">
+            <img src="img/images.jpg">
+            <img src="img/jardim_do_lago.jpg">
+            <img src="img/jequitibá.jpg">
+            <img src="img/placa-de-localizacao-cidade-de-santa-rita.jpg">
+            <img src="img/revitalizacao-de-morro-itatiaia-e-entregue-em-santa-rita-do-passa-quatro.jpg">
+            <img src="img/Santa_Rita_Do_Passa_Quatro_.jpg">
+            <img src="img/santarita.jpg">
+        </div>
+    </section>
 
-<!-- CARROSSEL TEXTO -->
-<section class="carousel-text">
-    <div class="marquee">
-        <span>🎄 Promoções de Natal</span>
-        <span>🚌 Roteiros Especiais</span>
-        <span>📸 Pontos Turísticos</span>
-    </div>
-</section>
+    <!-- Textos motivacionais dos pontos turísticos -->
+    <section class="motivacional">
+        <p>🌄 "Descubra a natureza exuberante de Santa Rita!"</p>
+        <p>🌳 "Trilhas, cachoeiras e paisagens inesquecíveis!"</p>
+        <p>🏞️ "Venha viver momentos únicos com sua família!"</p>
+    </section>
 
-<!-- TURISMO -->
-<section class="turismo">
-    <h2 class="titulo-natal">Pontos Turísticos de Santa Rita</h2>
-    <div class="box-ponto">
-        <h3>🌳 <a href="https://www.infraestruturameioambiente.sp.gov.br/fundacaoflorestal/2020/03/parque-estadual-vassununga/" target="_blank">Parque Estadual Vassununga</a></h3>
-        <p>Lar da gigantesca árvore jequitibá-rosa, símbolo nacional.</p>
-    </div>
-    <div class="box-ponto">
-        <h3>🎡 <a href="https://www.santaritadopassaquatro.sp.gov.br/praca-poeta-mario-mattoso" target="_blank">Praça Poeta Mário Mattoso</a></h3>
-        <p>Um dos principais cartões-postais da cidade.</p>
-    </div>
-    <div class="box-ponto">
-        <h3>🏛️ <a href="https://www.santaritadopassaquatro.sp.gov.br/museu-zequinha-de-abreu/" target="_blank">Museu Zequinha de Abreu</a></h3>
-        <p>História, música e cultura santarritense.</p>
-    </div>
-</section>
+    <!-- Parceiros em carrossel (somente texto) -->
+    <section class="parceiros">
+        <div class="parceiros-carrossel">
+            <span>Actus</span>
+            <span>São Missiato</span>
+            <span>ZPP</span>
+            <span>Reimalhas</span>
+            <span>São Matheu</span>
+        </div>
+    </section>
 
-<!-- GALERIA -->
-<section class="galeria">
-    <h2 class="titulo-natal">Explore a Cidade</h2>
-    <div class="galeria-carousel">
-        <img src="img/a_cidade_nova.jpg" alt="">
-        <img src="img/cachoeira_sao_valentim.jpg" alt="">
-        <img src="img/cachoeira_sao_valentim_queda.jpg" alt="">
-        <img src="img/conticlub.jpg" alt="">
-        <img src="img/desafios_turismo.jpg" alt="">
-        <img src="img/festival.jpg" alt="">
-        <img src="img/images.jpg" alt="">
-        <img src="img/jardim_do_lago.jpg" alt="">
-        <img src="img/jequitibá.jpg" alt="">
-    </div>
-</section>
+    <!-- WhatsApp (ajustar depois com o número real) -->
+    <a href="#" class="whatsapp">📞 WhatsApp</a>
 
-<!-- PARCEIROS -->
-<section class="parceiros">
-    <h2 class="titulo-natal">Parceiros Oficiais</h2>
-    <div class="parceiros-marquee">
-        <div class="item">Missiato</div>
-        <div class="item">ZPP</div>
-        <div class="item">Reimalhas</div>
-        <div class="item">São Matheus</div>
-        <div class="item">Pousada da Colina</div>
-        <div class="item">Mirante do Morro</div>
-    </div>
-</section>
+    <!-- Política de Privacidade -->
+    <footer>
+        <a href="#">Política de Privacidade</a>
+        <p>© 2025 — Santa Rita Do Passa Quatro</p>
+    </footer>
 
-<!-- COOKIES -->
-<div class="cookie-consent" id="cookieConsent">
-    <p>Este site utiliza cookies para melhorar sua experiência. <button id="acceptCookies">Aceitar</button></p>
-</div>
-
-<!-- SCRIPTS -->
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

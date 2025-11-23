@@ -1,60 +1,182 @@
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:#fff;overflow-x:hidden;scroll-behavior:smooth;position:relative;padding-left:40px;padding-right:40px;}
-
-/* FAIXAS LATERAIS */
-.faixa-left, .faixa-right{
-    position:fixed;top:0;width:25px;height:100vh;
-    background:#bf0000 url('../img/fundo-natal.png') repeat-y;
-    z-index:10;
+/* Fundo branco */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #1a1a1a;
+    overflow-x: hidden;
 }
-.faixa-left{left:0;}
-.faixa-right{right:0;}
 
-/* HEADER */
-header{background:#f4f4f4;text-align:center;padding:15px;position:sticky;top:0;z-index:100;}
-header h1{font-size:2rem;color:#0099ff;}
-header nav{margin-top:10px;}
-header nav a{text-decoration:none;margin:0 10px;color:#0099ff;font-weight:600;transition: transform 0.3s, box-shadow 0.3s, color 0.3s;}
-header nav a:hover, header nav a:active{transform: translateY(-6px);box-shadow:0 6px 15px rgba(0,0,0,0.3);color:#0055cc;}
+/* Bordas vermelhas laterais finas */
+.borda-natal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-left: 6px solid red;
+    border-right: 6px solid red;
+    box-sizing: border-box;
+}
 
-/* BANNER */
-.banner{text-align:center;padding:50px 15px;}
-.titulo-natal{font-size:2.4rem;color:red;text-shadow:0 0 10px yellow;margin-bottom:15px;}
-.subtitulo{font-size:1.2rem;margin-bottom:25px;}
-.btn-actus{display:inline-block;background:#0099ff;color:#fff;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;transition: all 0.3s;box-shadow:0 3px 10px rgba(0,0,0,0.2);}
-.btn-actus:hover{transform: translateY(-6px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.4);background:#007acc;}
+/* Logo azul */
+header {
+    text-align: center;
+    margin-top: 25px;
+}
 
-/* BOX PONTOS */
-.box-ponto{background:#f7f7f7;padding:18px;margin-bottom:15px;border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,0.15);transition: transform 0.3s, box-shadow 0.3s;}
-.box-ponto:hover,.box-ponto:active{transform: translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-.box-ponto h3{color:#bf0000;font-size:1.3rem;margin-bottom:8px;}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004aad; /* AZUL */
+    text-shadow: 0 0 10px #89c4ff;
+}
 
-/* GALERIA */
-.galeria-carousel{display:flex;gap:15px;overflow-x:auto;scroll-behavior:smooth;}
-.galeria-carousel img{width:220px;height:150px;border-radius:10px;flex-shrink:0;transition: transform 0.3s;}
-.galeria-carousel img:hover{transform: scale(1.1);}
+.sub {
+    margin-top: -5px;
+    font-size: 1.1rem;
+    color: #333;
+}
 
-/* CARROSSEL TEXTO */
-.marquee{display:flex;gap:50px;overflow:hidden;animation: marquee 12s linear infinite;}
-.marquee span{font-size:1.2rem;}
-@keyframes marquee{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+/* PAPAI NOEL VOANDO */
+.papai-noel {
+    position: fixed;
+    width: 160px;
+    top: 50px;
+    left: -200px;
+    z-index: 999;
+    pointer-events: none;
+    animation: acenar 1s infinite ease-in-out;
+}
 
-/* PARCEIROS */
-.parceiros-marquee{display:flex;gap:30px;overflow:hidden;animation: parceirosMove 15s linear infinite;}
-.parceiros-marquee .item{background:#0099ff;padding:10px 15px;border-radius:10px;color:#fff;font-weight:bold;box-shadow:0 3px 12px rgba(0,0,0,0.2);transition: transform 0.3s, box-shadow 0.3s;}
-.parceiros-marquee .item:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-@keyframes parceirosMove{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+@keyframes acenar {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
 
-/* PAPAI NOEL SOBREVOANDO */
-.santa{position:fixed;width:120px;z-index:200;transition: all 0.3s;}
-@media(max-width:768px){.santa{width:70px;}}
+/* Carrossel de fotos */
+.carrossel-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
 
-/* COOKIE */
-.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#0099ff;color:#fff;text-align:center;padding:10px;z-index:300;display:flex;justify-content:center;align-items:center;}
-.cookie-consent button{margin-left:10px;padding:5px 12px;border:none;background:#fff;color:#0099ff;border-radius:5px;cursor:pointer;}
+.carrossel {
+    display: flex;
+    gap: 15px;
+    animation: deslizar 30s linear infinite;
+}
 
-/* MOBILE */
-@media(max-width:768px){header h1{font-size:1.5rem;}.titulo-natal{font-size:1.8rem;}.subtitulo{font-size:1rem;padding:0 10px;}.box-ponto{padding:15px;}nav{font-size:0.9rem;}}
+.carrossel img {
+    width: 280px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
 
-/* NEVE */
-#snowCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:150;}
+@keyframes deslizar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Frases motivacionais */
+.motivacional {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* Carrossel parceiros (só texto) */
+.parceiros {
+    margin-top: 25px;
+    padding: 10px;
+    background: #fafafa;
+}
+
+.parceiros-carrossel {
+    display: flex;
+    gap: 50px;
+    white-space: nowrap;
+    animation: parceiros 12s linear infinite;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #004aad;
+}
+
+@keyframes parceiros {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Neve */
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.snowflake {
+    position: absolute;
+    font-size: 1.2rem;
+    color: #b0dfff;
+    animation-name: cair;
+    animation-timing-function: linear;
+}
+
+@keyframes cair {
+    0% { transform: translateY(-10vh); opacity: 1; }
+    100% { transform: translateY(110vh); opacity: 0; }
+}
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin: 40px 0;
+    opacity: .7;
+    font-size: 0.9rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #004aad;
+    font-weight: bold;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .logo { font-size: 1.7rem; }
+    .sub { font-size: 1rem; }
+    .papai-noel { width: 130px; }
+    .carrossel img {
+        width: 220px;
+        height: 130px;
+    }
+    .parceiros-carrossel {
+        font-size: 1.1rem;
+    }
+}

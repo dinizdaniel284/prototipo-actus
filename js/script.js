@@ -1,99 +1,53 @@
-/* =================== PAPAI NOEL SOBREVOANDO =================== */
-const santa = document.getElementById('santa');
-let posX = -150;
-let posY = 50;
-let speedSanta = 1.5;
+// script.js - Papai Noel + Neve + Ajustes
 
-function moveSanta(){
-    posX += speedSanta;
-    if(posX > window.innerWidth + 50){
-        posX = -150;
-        posY = Math.random() * (window.innerHeight - 150);
+// Criar neve caindo
+function criarNeve() {
+    const snow = document.getElementById("snow");
+
+    for (let i = 0; i < 25; i++) {
+        let floco = document.createElement("div");
+        floco.classList.add("snowflake");
+        floco.innerHTML = "❄";
+
+        floco.style.left = Math.random() * 100 + "vw";
+        floco.style.fontSize = (10 + Math.random() * 20) + "px";
+        floco.style.animationDuration = (4 + Math.random() * 6) + "s";
+        floco.style.opacity = 0.3 + Math.random() * 0.7;
+
+        snow.appendChild(floco);
+
+        setTimeout(() => floco.remove(), 9000);
     }
+}
+
+setInterval(criarNeve, 800);
+
+// Animação Papai Noel voando pela tela inteira
+const santa = document.querySelector('.papai-noel');
+let posX = -250;
+let posY = 50;
+let velX = 3;
+let velY = 2;
+
+function moverSanta() {
+    posX += velX;
+    posY += velY;
+
+    // Saiu da tela para direita → volta à esquerda
+    if (posX > window.innerWidth + 250) {
+        posX = -250;
+        posY = Math.random() * window.innerHeight * 0.8;
+    }
+
+    // Bate no topo ou no fundo → inverte direção
+    if (posY > window.innerHeight - 150 || posY < 0) {
+        velY *= -1;
+    }
+
     santa.style.left = posX + 'px';
     santa.style.top = posY + 'px';
-    requestAnimationFrame(moveSanta);
-}
-moveSanta();
 
-/* =================== GALERIA CARROSSEL =================== */
-const carousel = document.querySelector('.galeria-carousel');
-let scrollAmount = 0;
-
-function autoScroll() {
-    const speed = 1; // mais suave
-    scrollAmount += speed;
-    carousel.scrollLeft = scrollAmount;
-
-    if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth){
-        scrollAmount = 0;
-    }
-
-    requestAnimationFrame(autoScroll);
-}
-autoScroll();
-
-/* =================== NEVE REALISTA =================== */
-const canvas = document.getElementById('snowCanvas');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-
-const numFlakes = 250;
-const flakes = [];
-
-for (let i = 0; i < numFlakes; i++) {
-    flakes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 5 + 1,
-        speedY: Math.random() * 1 + 0.2,
-        speedX: Math.random() * 0.5 - 0.25,
-        angle: Math.random() * Math.PI * 2,
-        angleSpeed: Math.random() * 0.03,
-        depth: Math.random() // profundidade para efeito realista
-    });
+    requestAnimationFrame(moverSanta);
 }
 
-function drawSnow() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let flake of flakes) {
-        ctx.fillStyle = `rgba(255,255,255,${0.5 + 0.5*flake.depth})`; // flocos mais claros/escuros
-        flake.angle += flake.angleSpeed;
-        const x = flake.x + Math.sin(flake.angle) * 5;
-        ctx.beginPath();
-        ctx.arc(x, flake.y, flake.radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        flake.y += flake.speedY;
-        flake.x += flake.speedX;
-
-        if (flake.y > canvas.height) {
-            flake.y = -flake.radius;
-            flake.x = Math.random() * canvas.width;
-        }
-        if (flake.x > canvas.width) flake.x = 0;
-        if (flake.x < 0) flake.x = canvas.width;
-    }
-    requestAnimationFrame(drawSnow);
-}
-drawSnow();
-
-/* =================== COOKIES FUNCIONANDO =================== */
-const cookieConsent = document.getElementById('cookieConsent');
-const acceptBtn = document.getElementById('acceptCookies');
-
-if(localStorage.getItem('cookiesAccepted') === 'true'){
-    cookieConsent.style.display = 'none';
-}
-
-acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieConsent.style.display = 'none';
-});
+moverSanta();
