@@ -1,53 +1,87 @@
-// script.js - Papai Noel + Neve + Ajustes
+// -------- MODAL DA POLÍTICA --------
+var modal = document.getElementById("modal-politica");
+var botao = document.getElementById("abrir-politica");
+var fechar = document.querySelector(".fechar");
 
-// Criar neve caindo
-function criarNeve() {
-    const snow = document.getElementById("snow");
+botao.onclick = () => modal.style.display = "block";
+fechar.onclick = () => modal.style.display = "none";
+window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
 
-    for (let i = 0; i < 25; i++) {
-        let floco = document.createElement("div");
-        floco.classList.add("snowflake");
-        floco.innerHTML = "❄";
-
-        floco.style.left = Math.random() * 100 + "vw";
-        floco.style.fontSize = (10 + Math.random() * 20) + "px";
-        floco.style.animationDuration = (4 + Math.random() * 6) + "s";
-        floco.style.opacity = 0.3 + Math.random() * 0.7;
-
-        snow.appendChild(floco);
-
-        setTimeout(() => floco.remove(), 9000);
-    }
+// -------- COOKIES --------
+if (!localStorage.getItem("cookiesAceitos")) {
+    document.getElementById("cookies-banner").style.display = "block";
 }
 
-setInterval(criarNeve, 800);
+document.getElementById("aceitar-cookies").onclick = () => {
+    localStorage.setItem("cookiesAceitos", "sim");
+    document.getElementById("cookies-banner").style.display = "none";
+};
 
-// Animação Papai Noel voando pela tela inteira
-const santa = document.querySelector('.papai-noel');
-let posX = -250;
-let posY = 50;
-let velX = 3;
-let velY = 2;
+// -------- PARCEIROS --------
+const parceiros = [
+    {nome:'Olá! Agência de Marketing'},
+    {nome:'P4 ADVENTURE'},
+    {nome:'Padaria Veneza'},
+    {nome:'Palhares 1'},
+    {nome:'Palhares 2'},
+    {nome:'Palhares 3'},
+    {nome:'Palhares 4'},
+    {nome:'Papelaria Sophia Colorida'},
+    {nome:'Empório do Peixe'},
+    {nome:'Estácio EAD - Polo SRPQ'},
+    {nome:'Faith - Country Life'},
+    {nome:'Farmácia São José'},
+    {nome:'Fix Informática'},
+    {nome:'Gimafi Agropecuária'},
+    {nome:'Gipel'},
+    {nome:'Girotto Água e Gás'},
+    {nome:'Gráfica Gazeta'},
+    {nome:'Infinity'},
+    {nome:'Iquebbrou'},
+    {nome:'K2 EVENTOS'},
+    {nome:'LDC Presentes'},
+    {nome:'Manutenção Informática'},
+    {nome:'Marcelo Caetano - Monitor'},
+    {nome:'Márcia Nacca Calçados'},
+    {nome:'Mariá Calçados'},
+    {nome:'Marquinho Frios'},
+    {nome:'Moda Tintas'},
+    {nome:'Mundo A8 Travel'},
+    {nome:'Nenê Agropet'},
+    {nome:'OPnet Informática / ACTUS'},
+    {nome:'Bigode Barbearia'},
+    {nome:'Casa Girotto'},
+    {nome:'Colônia Chopp'},
+    {nome:'DBM Assessoria Contábil'},
+    {nome:'DCS Eventos'},
+    {nome:'Passa Quatro Vans'},
+    {nome:'Posto Barban'},
+    {nome:'Pousada da Colina'},
+    {nome:'Prevenir Saúde Consultoria'},
+    {nome:'Print Comunicação Visual'},
+    {nome:'Rede Palmeira'},
+    {nome:'Reimalhas'},
+    {nome:'Rennovary'},
+    {nome:'Restaurante e Pizzaria San'},
+    {nome:'Romano Gallo Corretora'},
+    {nome:'Solaprime'},
+    {nome:'Santa Hora Buffet'},
+    {nome:'Thiago Ferreira - Corretor'},
+    {nome:'Tipografia ARO'},
+    {nome:'Triroton'},
+    {nome:'Z. L. Veículos'},
+    {nome:'Zitta Shoes'},
+    {nome:'Ótica Paula'},
+    {nome:'Ótica Rubi'},
+    {nome:'Banco Sicoob'},
+    {nome:'Bar do Bim'},
+    {nome:'Adega dos Meninos - Serra'}
+];
 
-function moverSanta() {
-    posX += velX;
-    posY += velY;
+const parceirosDiv = document.getElementById("parceiros-carrossel");
 
-    // Saiu da tela para direita → volta à esquerda
-    if (posX > window.innerWidth + 250) {
-        posX = -250;
-        posY = Math.random() * window.innerHeight * 0.8;
-    }
-
-    // Bate no topo ou no fundo → inverte direção
-    if (posY > window.innerHeight - 150 || posY < 0) {
-        velY *= -1;
-    }
-
-    santa.style.left = posX + 'px';
-    santa.style.top = posY + 'px';
-
-    requestAnimationFrame(moverSanta);
-}
-
-moverSanta();
+parceiros.forEach(p => {
+    const span = document.createElement("span");
+    span.textContent = " • " + p.nome + " • ";
+    parceirosDiv.appendChild(span);
+});

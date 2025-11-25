@@ -1,75 +1,82 @@
-<!-- index.html completo -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Actus</title>
+    <title>Actus Turismo</title>
     <link rel="stylesheet" href="style/natal.css" />
 </head>
+
 <body>
 
-    <!-- Bordas natalinas -->
-    <div class="borda-natal"></div>
+<!-- Bordas laterais -->
+<div class="borda-esquerda"></div>
+<div class="borda-direita"></div>
 
-    <!-- Neve -->
-    <div id="snow"></div>
+<header>
+    <h1 class="logo">Actus Turismo e Comercio</h1>
+</header>
 
-    <!-- LOGO (Azul) -->
-    <header>
-        <h1 class="logo">✨ Actus ✨</h1>
-        <p class="sub">Venha viver a magia do Natal em nossa cidade!</p>
-    </header>
+<!-- Carrossel -->
+<section class="carrossel-container">
+    <div class="carrossel">
+        <img src="img/a_cidade_nova.jpg">
+        <img src="img/cachoeira_sao_valentim.jpg">
+        <img src="img/cachoeira_sao_valentim_queda.jpg">
+        <img src="img/conticlub.jpg">
+        <img src="img/desafios_turismo.jpg">
+        <img src="img/festival.jpg">
+        <img src="img/images.jpg">
+        <img src="img/jardim_do_lago.jpg">
+        <img src="img/jequitibá.jpg">
+        <img src="img/placa-de-localizacao-cidade-de-santa-rita.jpg">
+        <img src="img/revitalizacao-de-morro-itatiaia-e-entregue-em-santa-rita-do-passa-quatro.jpg">
+        <img src="img/Santa_Rita_Do_Passa_Quatro_.jpg">
+        <img src="img/santarita.jpg">
+    </div>
+</section>
 
-    <!-- Papai Noel voando -->
-    <img src="img/natal.png" class="papai-noel" alt="Papai Noel" />
+<section class="motivacional">
+    <p>🌄 "Descubra a natureza exuberante de Santa Rita!"</p>
+    <p>🌳 "Trilhas, cachoeiras e paisagens inesquecíveis!"</p>
+    <p>🏞️ "Venha viver momentos únicos com sua família!"</p>
+</section>
 
-    <!-- Carrossel de Pontos Turísticos -->
-    <section class="carrossel-container">
-        <div class="carrossel">
-            <img src="img/a_cidade_nova.jpg">
-            <img src="img/cachoeira_sao_valentim.jpg">
-            <img src="img/cachoeira_sao_valentim_queda.jpg">
-            <img src="img/conticlub.jpg">
-            <img src="img/desafios_turismo.jpg">
-            <img src="img/festival.jpg">
-            <img src="img/images.jpg">
-            <img src="img/jardim_do_lago.jpg">
-            <img src="img/jequitibá.jpg">
-            <img src="img/placa-de-localizacao-cidade-de-santa-rita.jpg">
-            <img src="img/revitalizacao-de-morro-itatiaia-e-entregue-em-santa-rita-do-passa-quatro.jpg">
-            <img src="img/Santa_Rita_Do_Passa_Quatro_.jpg">
-            <img src="img/santarita.jpg">
-        </div>
-    </section>
+<!-- Parceiros -->
+<section class="parceiros">
+    <div id="parceiros-carrossel"></div>
+</section>
 
-    <!-- Textos motivacionais dos pontos turísticos -->
-    <section class="motivacional">
-        <p>🌄 "Descubra a natureza exuberante de Santa Rita!"</p>
-        <p>🌳 "Trilhas, cachoeiras e paisagens inesquecíveis!"</p>
-        <p>🏞️ "Venha viver momentos únicos com sua família!"</p>
-    </section>
+<!-- WhatsApp -->
+<a href="https://wa.me/5519996254986" class="whatsapp" target="_blank">
+    💬 WhatsApp Actus
+</a>
 
-    <!-- Parceiros em carrossel (somente texto) -->
-    <section class="parceiros">
-        <div class="parceiros-carrossel">
-            <span>Actus</span>
-            <span>São Missiato</span>
-            <span>ZPP</span>
-            <span>Reimalhas</span>
-            <span>São Matheu</span>
-        </div>
-    </section>
+<!-- Política -->
+<footer>
+    <button id="abrir-politica">Política de Privacidade</button>
+    <p>© 2025 — Actus Turismo e Comércio</p>
+</footer>
 
-    <!-- WhatsApp (ajustar depois com o número real) -->
-    <a href="#" class="whatsapp">📞 WhatsApp</a>
+<!-- Modal Política -->
+<div id="modal-politica" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar">&times;</span>
+        <h2>Política de Privacidade e Termos de Uso</h2>
+        <p>Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política.</p>
+        <p>Coletamos informações básicas para oferecer serviços turísticos de forma eficiente.</p>
+        <p>Seus dados NUNCA são vendidos ou repassados.</p>
+        <p>Contato: actus@gmail.com</p>
+    </div>
+</div>
 
-    <!-- Política de Privacidade -->
-    <footer>
-        <a href="#">Política de Privacidade</a>
-        <p>© 2025 — Santa Rita Do Passa Quatro</p>
-    </footer>
+<!-- Cookies -->
+<div id="cookies-banner" class="cookies-banner">
+    <p>Este site usa cookies para melhorar sua experiência. Aceita?</p>
+    <button id="aceitar-cookies">Aceitar</button>
+</div>
 
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
