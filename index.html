@@ -3,80 +3,130 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Actus Turismo</title>
-    <link rel="stylesheet" href="style/natal.css" />
+    <title>Actus Turismo | Carnaval 2026 SRPQ</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/carnaval.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- Bordas laterais -->
-<div class="borda-esquerda"></div>
-<div class="borda-direita"></div>
+<nav class="navbar">
+    <div class="logo">Actus <span>Turismo</span></div>
+    <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#agenda">Carnaval</a></li>
+        <li><a href="#turismo">Turismo</a></li>
+        <li><a href="#comercio">Comércio</a></li>
+    </ul>
+</nav>
 
-<header>
-    <h1 class="logo">Actus Turismo e Comercio</h1>
+<header id="home" class="hero">
+    <div class="hero-content">
+        <span class="badge">Carnaval 2026 🎉</span>
+        <h1>Sinta a Energia de Santa Rita</h1>
+        <p>Do agito dos blocos à paz das cachoeiras. A Actus te guia no melhor da nossa cidade.</p>
+        <div class="hero-btns">
+            <a href="#agenda" class="btn-principal">Ver Programação</a>
+            <a href="#turismo" class="btn-secundario">Pontos Turísticos</a>
+        </div>
+    </div>
 </header>
 
-<!-- Carrossel -->
-<section class="carrossel-container">
-    <div class="carrossel">
-        <img src="img/a_cidade_nova.jpg">
-        <img src="img/cachoeira_sao_valentim.jpg">
-        <img src="img/cachoeira_sao_valentim_queda.jpg">
-        <img src="img/conticlub.jpg">
-        <img src="img/desafios_turismo.jpg">
-        <img src="img/festival.jpg">
-        <img src="img/images.jpg">
-        <img src="img/jardim_do_lago.jpg">
-        <img src="img/jequitibá.jpg">
-        <img src="img/placa-de-localizacao-cidade-de-santa-rita.jpg">
-        <img src="img/revitalizacao-de-morro-itatiaia-e-entregue-em-santa-rita-do-passa-quatro.jpg">
-        <img src="img/Santa_Rita_Do_Passa_Quatro_.jpg">
-        <img src="img/santarita.jpg">
+<section id="agenda" class="agenda-carnaval">
+    <h2 class="titulo-sessao">🎊 Programação Carnaval 2026</h2>
+    <div class="agenda-container">
+        <div class="dia-bloco">
+            <span class="data">13/02 • Sexta</span>
+            <h4>Grito de Carnaval</h4>
+            <p>Abertura oficial na Praça Poeta Mário Mattoso.</p>
+        </div>
+        <div class="dia-bloco destaque">
+            <span class="data">14 a 17/02 • Sáb a Ter</span>
+            <h4>Blocos Tradicionais</h4>
+            <p>Matinês e desfiles dos blocos pelas ladeiras de SRPQ.</p>
+        </div>
+        <div class="dia-bloco">
+            <span class="data">17/02 • Terça</span>
+            <h4>Encerramento</h4>
+            <p>Show de despedida e queima de fogos simbólica.</p>
+        </div>
+    </div>
+</section>
+
+<section id="turismo" class="carrossel-section">
+    <h2 class="titulo-sessao">Explore Nossas Belezas</h2>
+    <p style="text-align: center; color: #aaa; margin-bottom: 10px;">(Clique na foto para ampliar)</p>
+    <div class="carrossel-container">
+        <div class="carrossel">
+            <img src="img/a_cidade_nova.jpg" alt="Cidade de Santa Rita">
+            <img src="img/cachoeira_sao_valentim.jpg" alt="Cachoeira São Valentim">
+            <img src="img/cachoeira_sao_valentim_queda.jpg" alt="Queda da Cachoeira">
+            <img src="img/conticlub.jpg" alt="Conticlub">
+            <img src="img/desafios_turismo.jpg" alt="Turismo de Aventura">
+            <img src="img/festival.jpg" alt="Festival Local">
+            <img src="img/jardim_do_lago.jpg" alt="Jardim do Lago">
+            <img src="img/jequitibá.jpg" alt="Jequitibá Rosa">
+            <img src="img/revitalizacao-de-morro-itatiaia.jpg" alt="Morro Itatiaia">
+            <img src="img/Santa_Rita_Do_Passa_Quatro_.jpg" alt="Vista da Cidade">
+        </div>
     </div>
 </section>
 
 <section class="motivacional">
-    <p>🌄 "Descubra a natureza exuberante de Santa Rita!"</p>
-    <p>🌳 "Trilhas, cachoeiras e paisagens inesquecíveis!"</p>
-    <p>🏞️ "Venha viver momentos únicos com sua família!"</p>
+    <div class="card">
+        <span class="icon">🌄</span>
+        <h3>Natureza</h3>
+        <p>Cachoeiras e trilhas exuberantes em Santa Rita.</p>
+    </div>
+    <div class="card">
+        <span class="icon">🌳</span>
+        <h3>Aventura</h3>
+        <p>Deserto do Alemão e rotas de cicloturismo.</p>
+    </div>
+    <div class="card">
+        <span class="icon">🏞️</span>
+        <h3>Família</h3>
+        <p>Lazer e segurança para curtir com quem você ama.</p>
+    </div>
 </section>
 
-<!-- Parceiros -->
-<section class="parceiros">
+<section id="comercio" class="parceiros">
+    <h2 class="titulo-sessao">Comércio & Parceiros Actus</h2>
     <div id="parceiros-carrossel"></div>
 </section>
 
-<!-- WhatsApp -->
-<a href="https://wa.me/5519996254986" class="whatsapp" target="_blank">
-    💬 WhatsApp Actus
+<a href="https://wa.me/5519996254986" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>Dúvidas? Chame aqui!</span>
 </a>
 
-<!-- Política -->
 <footer>
-    <button id="abrir-politica">Política de Privacidade</button>
-    <p>© 2025 — Actus Turismo e Comércio</p>
+    <div class="footer-content">
+        <p>&copy; 2026 — <strong>Actus Turismo e Comércio</strong></p>
+        <button id="abrir-politica">Política de Privacidade</button>
+    </div>
 </footer>
 
-<!-- Modal Política -->
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Ampliada">
+</div>
+
 <div id="modal-politica" class="modal">
     <div class="modal-conteudo">
         <span class="fechar">&times;</span>
-        <h2>Política de Privacidade e Termos de Uso</h2>
-        <p>Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política.</p>
-        <p>Coletamos informações básicas para oferecer serviços turísticos de forma eficiente.</p>
-        <p>Seus dados NUNCA são vendidos ou repassados.</p>
-        <p>Contato: actus@gmail.com</p>
+        <h2>Privacidade e Termos</h2>
+        <p>Seus dados estão seguros na Actus. Contato: actus@gmail.com</p>
     </div>
 </div>
 
-<!-- Cookies -->
 <div id="cookies-banner" class="cookies-banner">
-    <p>Este site usa cookies para melhorar sua experiência. Aceita?</p>
+    <p>Aceita cookies? 🍪</p>
     <button id="aceitar-cookies">Aceitar</button>
 </div>
 
 <script src="js/script.js"></script>
-
 </body>
 </html>

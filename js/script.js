@@ -1,87 +1,63 @@
-// -------- MODAL DA POLÍTICA --------
-var modal = document.getElementById("modal-politica");
-var botao = document.getElementById("abrir-politica");
-var fechar = document.querySelector(".fechar");
+// MODAL E COOKIES
+const modal = document.getElementById("modal-politica");
+const btnPolitica = document.getElementById("abrir-politica");
+const fecharModal = document.querySelector(".fechar");
 
-botao.onclick = () => modal.style.display = "block";
-fechar.onclick = () => modal.style.display = "none";
+if(btnPolitica) btnPolitica.onclick = () => modal.style.display = "flex";
+if(fecharModal) fecharModal.onclick = () => modal.style.display = "none";
 window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
 
-// -------- COOKIES --------
 if (!localStorage.getItem("cookiesAceitos")) {
-    document.getElementById("cookies-banner").style.display = "block";
+    document.getElementById("cookies-banner").style.display = "flex";
 }
-
 document.getElementById("aceitar-cookies").onclick = () => {
     localStorage.setItem("cookiesAceitos", "sim");
     document.getElementById("cookies-banner").style.display = "none";
 };
 
-// -------- PARCEIROS --------
+// LIGHTBOX (ZOOM DAS FOTOS)
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const imagens = document.querySelectorAll('.carrossel img');
+
+imagens.forEach(img => {
+    img.onclick = () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    };
+});
+
+// PARCEIROS TICKER (ESTILO SRPQ)
 const parceiros = [
-    {nome:'Olá! Agência de Marketing'},
-    {nome:'P4 ADVENTURE'},
-    {nome:'Padaria Veneza'},
-    {nome:'Palhares 1'},
-    {nome:'Palhares 2'},
-    {nome:'Palhares 3'},
-    {nome:'Palhares 4'},
-    {nome:'Papelaria Sophia Colorida'},
-    {nome:'Empório do Peixe'},
-    {nome:'Estácio EAD - Polo SRPQ'},
-    {nome:'Faith - Country Life'},
-    {nome:'Farmácia São José'},
-    {nome:'Fix Informática'},
-    {nome:'Gimafi Agropecuária'},
-    {nome:'Gipel'},
-    {nome:'Girotto Água e Gás'},
-    {nome:'Gráfica Gazeta'},
-    {nome:'Infinity'},
-    {nome:'Iquebbrou'},
-    {nome:'K2 EVENTOS'},
-    {nome:'LDC Presentes'},
-    {nome:'Manutenção Informática'},
-    {nome:'Marcelo Caetano - Monitor'},
-    {nome:'Márcia Nacca Calçados'},
-    {nome:'Mariá Calçados'},
-    {nome:'Marquinho Frios'},
-    {nome:'Moda Tintas'},
-    {nome:'Mundo A8 Travel'},
-    {nome:'Nenê Agropet'},
-    {nome:'OPnet Informática / ACTUS'},
-    {nome:'Bigode Barbearia'},
-    {nome:'Casa Girotto'},
-    {nome:'Colônia Chopp'},
-    {nome:'DBM Assessoria Contábil'},
-    {nome:'DCS Eventos'},
-    {nome:'Passa Quatro Vans'},
-    {nome:'Posto Barban'},
-    {nome:'Pousada da Colina'},
-    {nome:'Prevenir Saúde Consultoria'},
-    {nome:'Print Comunicação Visual'},
-    {nome:'Rede Palmeira'},
-    {nome:'Reimalhas'},
-    {nome:'Rennovary'},
-    {nome:'Restaurante e Pizzaria San'},
-    {nome:'Romano Gallo Corretora'},
-    {nome:'Solaprime'},
-    {nome:'Santa Hora Buffet'},
-    {nome:'Thiago Ferreira - Corretor'},
-    {nome:'Tipografia ARO'},
-    {nome:'Triroton'},
-    {nome:'Z. L. Veículos'},
-    {nome:'Zitta Shoes'},
-    {nome:'Ótica Paula'},
-    {nome:'Ótica Rubi'},
-    {nome:'Banco Sicoob'},
-    {nome:'Bar do Bim'},
-    {nome:'Adega dos Meninos - Serra'}
+    {nome:'Olá! Marketing'}, {nome:'P4 ADVENTURE'}, {nome:'Padaria Veneza'},
+    {nome:'Palhares'}, {nome:'Empório do Peixe'}, {nome:'Sicoob'},
+    {nome:'Farmácia São José'}, {nome:'Girotto Água'}, {nome:'Bar do Bim'}
+    // Adicione mais se precisar...
 ];
 
-const parceirosDiv = document.getElementById("parceiros-carrossel");
+const ticker = document.getElementById("parceiros-carrossel");
+if (ticker) {
+    const content = document.createElement("div");
+    content.className = "ticker-content";
+    const lista = [...parceiros, ...parceiros, ...parceiros]; // Triplica para não ter buraco
+    lista.forEach(p => {
+        const span = document.createElement("span");
+        span.className = "parceiro-item";
+        span.innerHTML = ` ★ ${p.nome} `;
+        content.appendChild(span);
+    });
+    ticker.appendChild(content);
+}
 
-parceiros.forEach(p => {
-    const span = document.createElement("span");
-    span.textContent = " • " + p.nome + " • ";
-    parceirosDiv.appendChild(span);
-});
+// AUTO-SCROLL CARROSSEL
+const carrossel = document.querySelector('.carrossel');
+let scrollPos = 0;
+function autoScroll() {
+    if(!carrossel) return;
+    scrollPos += 1;
+    if (scrollPos >= carrossel.scrollWidth - carrossel.clientWidth) scrollPos = 0;
+    carrossel.scrollTo(scrollPos, 0);
+}
+let scrollInterval = setInterval(autoScroll, 40);
+carrossel.onmouseover = () => clearInterval(scrollInterval);
+carrossel.onmouseleave = () => scrollInterval = setInterval(autoScroll, 40);
